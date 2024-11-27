@@ -28,16 +28,30 @@ public class Ejemplo06 {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
+        String cadenaFinal = ""; 
         int tabla;
         int operacion;
         int contador = 1;
-        int limite;
-        
+        int limite ;
+        System.out.println("Ingrese el nuemero para generar tabla");
+        tabla = entrada.nextInt(); 
+        System.out.println("Ingrese el limite para generar tabla");
+        limite = entrada.nextInt(); 
+
+     
         do {
-            operacion = tabla * contador;
-            System.out.printf("%d x %d = %d\n", tabla, contador, operacion);
+            operacion = tabla * contador; // 2*1=2 // 2*2=4
+                                   // 2 x 1 = 2
+                                   // 2 x 2 = 4
+            cadenaFinal = String.format("%s%d x %d = %d\n", 
+                    cadenaFinal,
+                    tabla, 
+                    contador, 
+                    operacion);  
             contador = contador + 1;
         } while (contador <= limite);
+            System.out.printf("%s",cadenaFinal); 
 
     }
+    
 }
